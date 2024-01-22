@@ -17,16 +17,6 @@ class DokterControllers extends Controller
         $dktr = Dokter::latest()->paginate(5);
         return view('dktr.index', compact('dktr'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
-    public function getRuangan()
-    {
-        $ruangan = Ruangan::all();
-        // Di dalam controller
-        return view('dktr.create', compact('ruangan'));
-        // return view('dktr.create')->with('ruangan', $ruangan);
-
-        // Atau menggunakan with()
-        // return view('view_name')->with('products', $products);
-    }
 
     /**
      * Show the form for creating a new resource.
